@@ -25,11 +25,15 @@ class HomeMapper extends IMapper<String, HomeDataDto, HomeViewModel> {
           dataViewModel.avatar = model.avatar;
           if (model.subPaths != null && model.subPaths.length > 0) {
             dataViewModel.subPathList = new List();
-            for (SubPath subPath in model.subPaths) {
+            for (int i = 0; i < model.subPaths.length; i++) {
               SubPathVM subPathVM = new SubPathVM();
+              SubPath subPath = model.subPaths.elementAt(i);
               subPathVM.title = subPath.title;
               subPathVM.image = subPath.image;
-              subPathVM.isSelected = false;
+              if (i == 0)
+                subPathVM.isSelected = true;
+              else
+                subPathVM.isSelected = false;
               dataViewModel.subPathList.add(subPathVM);
             }
           }

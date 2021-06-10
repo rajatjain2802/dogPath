@@ -39,7 +39,7 @@ class _HomeScreenState extends BaseState<HomeScreen> {
               return ListView.builder(
                 itemBuilder: (_, index) {
                   HomeDataViewModel dataViewModel = model.homeDataList.elementAt(index);
-                  print(dataViewModel.subPathCount);
+
                   return dataViewModel.subPathCount > 0
                       ? Column(
                           children: <Widget>[
@@ -134,7 +134,7 @@ class _HomeScreenState extends BaseState<HomeScreen> {
                                                 dataViewModel.controller.animateToPage(pageIndex,
                                                     duration: Duration(milliseconds: 500),
                                                     curve: Curves.easeInOut);
-                                                print(dataViewModel.controller.ready);
+
                                                 setState(() {});
                                               },
                                               child: textView(
