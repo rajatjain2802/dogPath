@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "15378018625",
+    "project_id": "dogpath-7e554",
+    "storage_bucket": "dogpath-7e554.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:15378018625:android:4c6330229d3e65fc1d31c0",
+        "android_client_info": {
+          "package_name": "com.example.dog_path_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "15378018625-gd2l33jeliq2o0iiovsemrjfsl93ts3d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.dog_path_app",
+            "certificate_hash": "185f3cf9125f3de23f9d1dfda6851dbdc754efa7"
+          }
+        },
+        {
+          "client_id": "15378018625-fo23tkqa52qghvjlrikfq05k5qrl7g6q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBahZ-Loumyk8WvoahSY8TPOEx58VKl44c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "15378018625-fo23tkqa52qghvjlrikfq05k5qrl7g6q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
