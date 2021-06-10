@@ -6,6 +6,9 @@ import 'package:dog_path_app/widget/ImageViewAssets.dart';
 import 'package:dog_path_app/widget/TextView.dart';
 import 'package:flutter/material.dart';
 
+/*
+* Created by Rajat Jain 09/06/2021
+ */
 class SplashScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {

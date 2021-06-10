@@ -2,6 +2,7 @@ import 'package:dog_path_app/res/AppColor.dart';
 import 'package:dog_path_app/res/Dimensions.dart';
 import 'package:dog_path_app/widget/TextView.dart';
 import 'package:flutter/material.dart';
+//Custom Toolbar
 
 AppBar toolBar({
   @required String toolBarTitle,

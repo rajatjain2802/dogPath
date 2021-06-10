@@ -2,12 +2,14 @@ import 'package:dog_path_app/base/BaseState.dart';
 import 'package:dog_path_app/res/AppColor.dart';
 import 'package:dog_path_app/res/Dimensions.dart';
 import 'package:dog_path_app/res/Strings.dart';
+import 'package:dog_path_app/util/Utils.dart';
 import 'package:dog_path_app/widget/TextView.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_facebook_login/flutter_facebook_login.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 
+/*
+* Created by Rajat Jain 09/06/2021
+ */
 class LoginScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -16,10 +18,6 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends BaseState<LoginScreen> {
-  final FirebaseAuth auth = FirebaseAuth.instance;
-  final FacebookLogin fbLogin = new FacebookLogin();
-  bool isFacebookLoginIn = false;
-
   @override
   Widget getBuildWidget(BuildContext context) {
     return Container(
@@ -42,11 +40,12 @@ class _LoginScreenState extends BaseState<LoginScreen> {
             Buttons.FacebookNew,
             onPressed: () {
               showProgress(true);
-              facebookLogin(context).then((user) {
+              facebookLogin().then((user) {
                 if (user != null) {
                   showProgress(false);
                   Navigator.pushNamed(context, '/home');
                 } else {
+                  showProgress(false);
                   print('Error while Login.');
                 }
               });
@@ -64,31 +63,4 @@ class _LoginScreenState extends BaseState<LoginScreen> {
 
   @override
   void onScreenReady(BuildContext context) {}
-
-  Future<User> facebookLogin(BuildContext context) async {
-    User currentUser;
-    fbLogin.loginBehavior = FacebookLoginBehavior.webViewOnly;
-    // if you remove above comment then facebook login will take username and pasword for login in Webview
-    try {
-      final FacebookLoginResult facebookLoginResult =
-          await fbLogin.logIn(['email', 'public_profile']);
-      if (facebookLoginResult.status == FacebookLoginStatus.loggedIn) {
-        FacebookAccessToken facebookAccessToken = facebookLoginResult.accessToken;
-        final AuthCredential credential =
-            FacebookAuthProvider.credential(facebookAccessToken.token);
-        final UserCredential user = await auth.signInWithCredential(credential);
-        // assert(user.user.email != null);
-        // assert(user.user.displayName != null);
-        // assert(!user.user.isAnonymous);
-        // assert(await user.user.getIdToken() != null);
-        currentUser = auth.currentUser;
-        // assert(user.user.uid == currentUser.uid);
-        currentUser = user.user;
-        return currentUser;
-      }
-    } catch (e) {
-      print(e);
-    }
-    return currentUser;
-  }
 }

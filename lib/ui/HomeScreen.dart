@@ -14,6 +14,9 @@ import 'package:dog_path_app/widget/Toolbar.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+/*
+* Created by Rajat Jain 09/06/2021
+ */
 class HomeScreen extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
@@ -23,11 +26,6 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends BaseState<HomeScreen> {
   HomeViewModel vm = new HomeViewModel();
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   @override
   Widget getBuildWidget(BuildContext context) {
@@ -63,7 +61,7 @@ class _HomeScreenState extends BaseState<HomeScreen> {
                                           ),
                                           textView(
                                               title: dataViewModel.subPathCount.toString() +
-                                                  "sub Path",
+                                                  Strings.subPath,
                                               margin: EdgeInsets.only(top: 8)),
                                         ],
                                       ),
@@ -73,7 +71,7 @@ class _HomeScreenState extends BaseState<HomeScreen> {
                                     margin: EdgeInsets.only(right: 10),
                                     color: AppColor.primaryDark,
                                     child: textView(
-                                        title: "Open Path",
+                                        title: Strings.openPath,
                                         fontColor: AppColor.blue,
                                         padding: EdgeInsets.all(5),
                                         textAlign: TextAlign.center),
@@ -138,8 +136,6 @@ class _HomeScreenState extends BaseState<HomeScreen> {
                                                     curve: Curves.easeInOut);
                                                 print(dataViewModel.controller.ready);
                                                 setState(() {});
-                                                // dataViewModel.controller.nextPage();
-                                                // print("Animated ${_curr}");
                                               },
                                               child: textView(
                                                   fontSize: Dimensions.txtSize16px,

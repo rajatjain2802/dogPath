@@ -7,4 +7,6 @@ class Strings {
   static final String virtouStackTxt = "VirtouStack Software Pvt. Ltd.";
   static final String signInTxt = "Sign In";
   static final String signInWithFbTxt = "Sign in with your facebook account";
+  static final String subPath = "sub Path";
+  static final String openPath = "Open Path";
 }

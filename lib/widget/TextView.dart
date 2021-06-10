@@ -12,9 +12,9 @@ Widget textView({
   FontWeight fontWeight = FontWeight.normal,
   TextAlign textAlign = TextAlign.left,
   Color containerBg = AppColor.transparent,
-  double width = null,
+  double width,
   TextDecoration textDecoration = TextDecoration.none,
-  Alignment alignment = null,
+  Alignment alignment,
   int maxLine = 1,
   TextOverflow overflow = TextOverflow.visible,
 }) {
